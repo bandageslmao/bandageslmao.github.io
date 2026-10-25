@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/mainpage.css">
+    <title></title>
+</head>
+<body>
+    <div id="background"></div>
+    <div style="display: flex; flex-direction: row;">
+        <div class="buttondisplays"><button></button><button></button></div>
+        <div class="buttondisplays" id="middle"><button id="bandageslmao"><img></button></div>
+        <div class="buttondisplays"><button></button><button></button></div>
+    </div>
+    <a href="index.html">testlink</a>
+</body>
+    <script src="scripts/DialogueManager.js"></script>
+    <script src="scripts/FourthWallBreaking.js"></script>
+    <script src="scripts/ElementEffects.js"></script>
+    <script>
+        const button = document.getElementById("bandageslmao")
+        let clicked = false
+        button.onclick=function(){
+            if (clicked === false){
+                clicked = true
+                let line = Math.floor(Math.random()*3)
+                drawDialogue("typewriter",document.getElementById("middle"),line)
+                let textarea = document.createElement("textarea")
+                textarea.style.opacity = 0
+                setTimeout(function(){
+                    document.getElementById("middle").insertAdjacentElement("beforeend",textarea)
+                    fade("in",100,textarea)
+                },1000)
+            }
+        }
+    </script>
+    <script>
+        let increment = 1
+        setInterval(function(){
+            increment++
+            document.getElementById("background").style.backgroundPositionX = increment + "px"
+            document.getElementById("background").style.backgroundPositionY = increment + "px"
+        },10)
+    </script>
+    <script src="scripts/MusicManager.js"></script>
+</html>
