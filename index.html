@@ -3,28 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Select A File</title>
-    <style>
-        @font-face {
-            font-family: sm64beta;
-            src: url('assets/fonts/sm64BetaFont.ttf')
-        }
-        p{
-            font-family: sm64beta;
-        }
-    </style>
+    <title></title>
 </head>
 <body>
-    <h1>If You Have A Save File, Please Input It Here.</h1>
-    <input type="file" id="savefile" accept="application/json"></input>
-    <audio src="assets/audio/music/FileSelect.mp3"></audio>
+    <a href="index.html">ok</a>
+    <div id="debugdiv">
+
+    </div>
 </body>
-    <script>
-        document.getElementById("savefile").addEventListener("change",(e) =>{
-            let jsonfile = JSON.parse(document.getElementById("savefile").files[0])
-            for (i in jsonfile){
-                window.alert(jsonfile[i])
-            }
-        })
+    <script src="./scripts/Debugging.js"></script>
+    <script type="module">
+        import { PageSwap } from "./scripts/GeneralFunctions.js"
+        PageSwap("Home",false)
     </script>
 </html>

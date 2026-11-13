@@ -1,4 +1,3 @@
-
 async function drawDialogue(type,parent,id) {
     const response = await fetch("../data/dialogue.json")
     const dialogue = await response.json()
